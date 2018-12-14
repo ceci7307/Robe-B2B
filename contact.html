@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt en medarnejder fra Robe Copenhagen</title>
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+
+        <ul class="nav" id="topnav">
+            <li>
+                <a href="forside.html">
+     <img class="logo" src="logo-sort.png" alt="Robe Logo">
+     </a>
+            </li>
+            <br>
+            <li><a href="forside.html">Home</a></li>
+            <li><a href="/about/">Shop</a></li>
+            <li><a href="/work/">Retailers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+        </ul>
+
+    </header>
+
+    <div class="contact-container"></div>
+    <template id="contact-template">
+      <article class="contact-article">
+    <div class="div2">
+            <div class="section-billede">
+        <img class="data-medarbejder" src="" alt="">
+        </div>
+      <div class="section-txt">
+       <h1 class="data-navn"></h1>
+       <p class="data-mail"></p>
+          <p class="data-mobil"></p>
+    </div>
+      </div>
+       </article>
+    </template>
+
+
+
+
+    <script>
+        // Responsiv nav
+        function navFunktion() {
+            var x = document.getElementById("topnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+
+        // DOM
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let contactTemplate = document.querySelector("#contact-template");
+        let contactContainer = document.querySelector(".contact-container");
+        // Hent json
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe/wp-json/wp/v2/contact");
+            contacts = await jsonData.json();
+            console.log(contacts);
+            visContacts();
+        }
+        // Viser og kloner
+        function visContacts() {
+            contacts.forEach(contact => {
+                let klon = contactTemplate.cloneNode(true).content;
+                klon.querySelector(".data-navn").textContent = contact.acf.navn;
+                klon.querySelector(".data-mail").textContent = contact.acf.mail;
+                klon.querySelector(".data-mobil").textContent = contact.acf.tlf;
+                klon.querySelector(".data-medarbejder").src = contact.acf.billede;
+
+                contactContainer.appendChild(klon);
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

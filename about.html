@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velkommen til Robe Copenhagen</title>
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <ul class="nav" id="topnav">
+            <li>
+                <a href="forside.html">
+     <img class="logo" src="logo-sort.png" alt="Robe Logo">
+     </a>
+            </li>
+            <br>
+            <li><a href="forside.html">Home</a></li>
+            <li><a href="/about/">Shop</a></li>
+            <li><a href="/work/">Retailers</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+        </ul>
+
+    </header>
+
+    <main class="about-container">
+
+        <article class="about-article">
+
+            <img class="data-hovedbillede" src="" alt="">
+            <div class="content">
+                <h1 class="overskrift-om"></h1>
+                <div class="data-om"></div>
+            </div>
+        </article>
+
+        <section class="citat">
+            <div class="div">
+                <p class="data-citat"></p>
+                <img class="data-portrait" src="" alt="">
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="column">
+                <img class="pic_1" src="" alt="">
+                <img class="pic_2" src="" alt="">
+                <img class="pic_4" src="" alt="">
+            </div>
+            <div class="column">
+                <img class="pic_6" src="" alt="">
+                <img class="pic_7" src="" alt="">
+                <img class="pic_8" src="" alt="">
+
+
+            </div>
+            <div class="column">
+                <img class="pic_9" src="" alt="">
+                <img class="pic_5" src="" alt="">
+                <img class="pic_11" src="" alt="">
+            </div>
+            <div class="column">
+                <img class="pic_3" src="" alt="">
+                <img class="pic_10" src="" alt="">
+                <img class="pic_12" src="" alt="">
+            </div>
+        </div>
+    </main>
+
+    <!--Script-->
+    <script>
+        // Responsiv nav
+        function navFunktion() {
+            var x = document.getElementById("topnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+        // About
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let about;
+        let aboutContainer = document.querySelector(".about-container");
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe/wp-json/wp/v2/about/27");
+            about = await jsonData.json();
+            console.log(about);
+            visPage();
+        }
+
+        function visPage() {
+            console.log(about);
+
+            document.querySelector(".data-hovedbillede").src = about.acf.Hovedbillede;
+            document.querySelector(".data-om").innerHTML = about.content.rendered;
+            document.querySelector(".data-citat").textContent = about.acf.citat;
+            document.querySelector(".overskrift-om").textContent = about.title.rendered;
+            document.querySelector(".data-portrait").src = about.acf.portrait;
+
+            document.querySelector(".pic_1").src = about.acf.billede_1;
+            document.querySelector(".pic_2").src = about.acf.billede_2;
+            document.querySelector(".pic_3").src = about.acf.billede_3;
+            document.querySelector(".pic_4").src = about.acf.billede_4;
+            document.querySelector(".pic_5").src = about.acf.billede_5;
+            document.querySelector(".pic_6").src = about.acf.billede_6;
+            document.querySelector(".pic_7").src = about.acf.billede_7;
+            document.querySelector(".pic_8").src = about.acf.billede_8;
+            document.querySelector(".pic_9").src = about.acf.billede_9;
+            document.querySelector(".pic_10").src = about.acf.billede_10;
+            document.querySelector(".pic_11").src = about.acf.billede_11;
+            document.querySelector(".pic_12").src = about.acf.billede_12;
+        }
+    </script>
+
+</body>
+
+</html>

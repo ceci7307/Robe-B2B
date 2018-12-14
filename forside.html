@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velkommen til Robe Copenhagen</title>
+    <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+
+<header>
+
+<ul class="nav" id="topnav">
+ <li>
+    <a href="forside.html">
+     <img class="logo" src="logo-sort.png" alt="Robe Logo">
+     </a>
+ </li>
+ <br>
+  <li><a href="forside.html" class="active">Home</a></li>
+  <li><a href="/about/">Shop</a></li>
+  <li><a href="/work/">Retailers</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+</ul>
+
+</header>
+
+    <main class="forside-container">
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img class="billeder-1" src="" alt="">
+                <div class="txt">
+                    <h1 class="data-kollektion"></h1>
+                </div>
+                <button class="shop fade">SHOP</button>
+            </div>
+            <div class="mySlides fade">
+                <img class="billeder-2" src="" alt="">
+                <div class="txt">
+                    <h1 class="data-kollektion"></h1>
+                </div>
+                <button class="shop fade">SHOP</button>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </main>
+
+<footer>
+    <h1> Hej</h1>
+    <p>Goddag</p>
+</footer>
+
+    <!--Script-->
+    <script>
+
+        // Responsiv nav
+        function navFunktion() {
+  var x = document.getElementById("topnav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+
+        // Forside billeder
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let forsidePic;
+        let forsidePicContainer = document.querySelector(".forside-container");
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe/wp-json/wp/v2/forside_b2b/25");
+            forsidePic = await jsonData.json();
+            console.log(forsidePic);
+            visPage();
+        }
+
+        function visPage() {
+            console.log(forsidePic);
+            document.querySelector(".billeder-1").src = forsidePic.acf.billede_1;
+            document.querySelector(".billeder-2").src = forsidePic.acf.billede_2;
+            document.querySelectorAll(".data-kollektion").forEach(k =>{
+               k.textContent = forsidePic.acf.kollektion;
+            })
+        }
+
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+
+</body>
+</html>
