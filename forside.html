@@ -41,6 +41,29 @@
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </header>
+
+        <!--NEWSLETTER-->
+
+    <button class="open-button" onclick="openForm()">Tilmeld nyhedsbrev</button>
+
+<div class="form-popup" id="newsletter">
+  <form action="#" class="form-container">
+    <h1>Robe nyhedsbrev</h1>
+
+    <label for="navn"><b>Navn</b></label>
+    <input type="text" placeholder="Dit navn..." name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Din email..." name="email" required>
+
+    <button type="submit" class="knap">Tilmeld</button>
+    <button type="button" class="knap cancel" onclick="closeForm()">Luk</button>
+  </form>
+</div>
+
+
+    <!--INDHOLD-->
+
     <main class="forside-container">
 
         <div class="slideshow-container">
@@ -104,6 +127,7 @@
     <!--Script-->
     <script>
 
+
         // Responsiv nav
         function navFunktion() {
   var x = document.getElementById("topnav");
@@ -112,6 +136,16 @@
   } else {
     x.className = "nav";
   }
+}
+
+        // Newsletter
+
+        function openForm() {
+  document.getElementById("newsletter").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("newsletter").style.display = "none";
 }
 
         // Forside billeder
@@ -165,6 +199,7 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
+
     </script>
 
 

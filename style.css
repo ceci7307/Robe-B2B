@@ -50,7 +50,7 @@ img {
     border-bottom: none;
 }
 
-.logo-container img{
+.logo-container img {
     width: 100%;
     max-width: 13vw;
     margin-top: 2vw;
@@ -89,6 +89,66 @@ img {
     text-align: left;
 }
 
+/* NEWSLETTER */
+
+.open-button {
+    background-color: #dfdfdf;
+    color: black;
+    padding: 6px 2px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 13px;
+    right: 28px;
+    width: 90px;
+    z-index: 1;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #dfdfdf;
+    z-index: 2;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #dfdfdf;
+}
+
+.form-container .knap {
+    background-color: #628297;
+    color: black;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.form-container .cancel {
+    background-color: #628297;
+}
+
+.form-container .knap:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
 
 
 /*FORSIDE*/
@@ -111,7 +171,7 @@ img {
 }
 
 .slideshow-container img {
-    width: 100%
+    width: 100%;
 }
 
 /* Caption text */
@@ -375,6 +435,7 @@ a {
 
 footer {
     background-color: #dfdfdf;
+    margin-top: 5vw;
 }
 
 
@@ -440,10 +501,11 @@ footer {
 
 /* FORHANDLERE  */
 
-.f-container p{
+.f-container p {
     margin-left: 3vw;
 }
-.f-container h1{
+
+.f-container h1 {
     margin-left: 5vw;
 }
 
@@ -594,15 +656,19 @@ footer {
     }
 
     .linje-om {
-    border-bottom: 0.2vw solid #628297;
-    max-width: 9vw;
-    margin-left: 7vw;
-}
-
-    .f-container{
-text-align: center;
+        border-bottom: 0.2vw solid #628297;
+        max-width: 9vw;
+        margin-left: 7vw;
     }
 
+    .f-container {
+        text-align: center;
+    }
+
+    .open-button {
+        padding: 10px 10px;
+        width: 150px;
+    }
 
 }
 
@@ -729,15 +795,14 @@ text-align: center;
         margin-left: 3vw;
     }
 
-        .linje-om {
-    max-width: 5vw;
-    margin-left: 4vw;
-}
+    .linje-om {
+        max-width: 5vw;
+        margin-left: 4vw;
+    }
 
-        .f-container{
-          columns: 2;
+    .f-container {
+        columns: 2;
         margin-left: 10vw;
         margin-right: 10vw;
     }
-
 }
