@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velkommen til Robe Copenhagen</title>
+    <title>Find forhandlere af Robe Copenhagen</title>
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
     <!-- CSS  -->
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -18,8 +18,41 @@
 
 <body>
 
+<div class="f-container"></div>
+<template class="f-template">
+    <article class="f-article">
+    <h1 class="f-navn"></h1>
+    <div class="f-txt"></div>
+    </article>
+</template>
 
 
+
+<script>
+    // DOM
+        document.addEventListener("DOMContentLoaded", getJSON);
+        let fTemplate = document.querySelector(".f-template");
+        let fContainer = document.querySelector(".f-container");
+        // Hent json
+        async function getJSON() {
+            let jsonData = await fetch("http://digcon.dk/kea/2SEM/robe/wp-json/wp/v2/forhandlere");
+            f = await jsonData.json();
+            console.log(f);
+            visPage();
+        }
+        // Viser og kloner
+        function visPage() {
+            f.forEach(f1 => {
+                let klon = fTemplate.cloneNode(true).content;
+                klon.querySelector(".f-navn").textContent = f1.title.rendered;
+                klon.querySelector(".f-txt").innerHTML = f1.content.rendered;
+
+                fContainer.appendChild(klon);
+            });
+        }
+
+
+</script>
 
 
 </body>

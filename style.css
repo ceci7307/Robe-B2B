@@ -438,6 +438,21 @@ footer {
 }
 
 
+/* FORHANDLERE  */
+
+.f-container p{
+    margin-left: 3vw;
+}
+.f-container h1{
+    margin-left: 5vw;
+}
+
+.f-container {
+    line-height: 2.5;
+}
+
+
+
 
 /* Media Q ipad  */
 
@@ -584,6 +599,11 @@ footer {
     margin-left: 7vw;
 }
 
+    .f-container{
+text-align: center;
+    }
+
+
 }
 
 
@@ -713,5 +733,11 @@ footer {
     max-width: 5vw;
     margin-left: 4vw;
 }
+
+        .f-container{
+          columns: 2;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
 
 }
