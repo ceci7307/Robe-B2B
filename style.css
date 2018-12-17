@@ -22,6 +22,7 @@ img {
     margin: 0;
     padding: 0;
     text-align: center;
+    margin-top: 2vw;
 }
 
 .nav li {
@@ -519,9 +520,6 @@ footer {
 /* Media Q ipad  */
 
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: lightpink;
-    }
 
     .forside-container {
         margin: 8vw;
@@ -676,9 +674,6 @@ footer {
 /* Media Q computer  */
 
 @media only screen and (min-width: 1024px) {
-    body {
-        background-color: white;
-    }
 
     .forside-container {
         margin-top: 2vw;
