@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velkommen til Robe Copenhagen</title>
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <!-- CSS  -->
     <link rel="stylesheet" href="style.css" type="text/css">
+     <!-- Icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 
 
 </head>
@@ -16,24 +20,27 @@
 
 <header>
 
-<ul class="nav" id="topnav">
- <li>
-    <a href="forside.html">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="forside.html">
      <img class="logo" src="logo-sort.png" alt="Robe Logo">
-     </a>
- </li>
- <br>
-  <li><a href="forside.html" class="active">Home</a></li>
-  <li><a href="/about/">Shop</a></li>
-  <li><a href="/work/">Retailers</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+     </a></div>
+     <div class="icon-container">
+    <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
       <i class="fa fa-bars"></i></a>
-</ul>
+       </div>
+        </div>
 
-</header>
+           <ul class="nav" id="topnav">
 
+            <br>
+            <li><a href="forside.html">Home</a></li>
+            <li><a href="/about/">Shop</a></li>
+            <li><a href="/work/">Retailers</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </header>
     <main class="forside-container">
 
         <div class="slideshow-container">
@@ -65,8 +72,28 @@
     </main>
 
 <footer>
-    <h1> Hej</h1>
-    <p>Goddag</p>
+
+   <div class="foot-wrap">
+   <div class="foot-txt">
+    <h2>CONTACT</h2>
+    <p>info@robe.dk</p>
+      <p>+45 68 47 37 47</p>
+       </div>
+       <div class="foot-txt">
+        <h2> STORE</h2>
+    <p>Adresse</p>
+      <p><br>Åbningstider</p>
+       </div>
+       <div class="foot-txt">
+        <h2>SHOWROOM</h2>
+    <p>Adresse</p>
+      <p>Kontakt for fremvisning</p>
+       </div>
+
+    </div>
+     <div class="foot-pic">
+      <img src="footer-pict.png" alt="Frederiksberg">
+    </div>
 </footer>
 
     <!--Script-->

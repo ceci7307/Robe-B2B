@@ -3,6 +3,7 @@
 body {
     margin: 0;
     background-color: white;
+    font-family: 'Assistant', sans-serif;
 }
 
 img {
@@ -18,31 +19,25 @@ img {
     text-align: center;
 }
 
-.nav img {
-    width: 100%;
-    max-width: 13vw;
-    margin-top: 2vw;
-}
-
 .nav li {
     display: inline;
 }
 
-.nav a {
-    display: none;
+.nav a{
+    display: none ;
     padding: 10px;
     text-decoration: none;
     color: black;
-    font-family: helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 14.5px;
 }
 
 .nav a:hover {
-    border-bottom: 2px solid skyblue;
+    border-bottom: 2px solid #628297;
 }
 
 .nav a.active {
-    border-bottom: 2px solid skyblue;
+    border-bottom: 2px solid #628297;
     background-color: white;
 }
 
@@ -50,15 +45,24 @@ img {
     border-bottom: none;
 }
 
-.nav a:not(:first-child) {
-    display: none;
+.logo-container{
+    width: 100%;
+    max-width: 13vw;
+    margin-top: 2vw;
+    margin-left: 5vw;
 }
-
-.nav a.icon {
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.icon-container{
+    margin-right: 5vw;
+}
+.icon {
     float: right;
     display: block;
-    margin-right: 4vw;
     font-size: 20px;
+    color: black;
 }
 
 .nav.responsive {
@@ -111,26 +115,26 @@ img {
     color: white;
     padding-left: 5vw;
     padding-right: 25vw;
-    font-family: helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     font-size: 2.5vw;
 }
 
 .shop {
     position: absolute;
     bottom: 21.5vw;
-    right: 62vw;
+    right: 57vw;
     cursor: pointer;
     border: 1px solid white;
     padding: 2vw 7vw 2vw 7vw;
-    font-family: helvetica, sans-serif;
+    font-family: 'Assistant', sans-serif;
     background-color: rgba(0, 0, 0, 0.0);
     color: white;
     font-size: 3vw;
 }
 
 .shop:hover {
-    border: 1px solid skyblue;
-    color: skyblue;
+    border: 1px solid #628297;
+    color: #628297;
 }
 
 /* Next & previous buttons */
@@ -191,7 +195,7 @@ img {
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
-    margin-top: 13vw;
+    margin-top: 3vw;
 }
 
 @-webkit-keyframes fade {
@@ -304,9 +308,26 @@ img {
 
 /*FOOTER*/
 footer{
-    background-color: lightskyblue;
+    background-color: #dfdfdf;
+    margin-bottom: 0;
 }
 
+.foot-wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.foot-txt {
+    margin: auto;
+}
+
+.foot-txt H2{
+    font-size: 14px;
+}
+
+.foot-pic{
+text-align: center;
+}
 
 
 
@@ -334,7 +355,7 @@ footer{
     .shop {
 
         bottom: 24vw;
-        right: 62vw;
+        right: 57.5vw;
         padding: 2vw 5vw 2vw 5vw;
         font-size: 2vw;
     }
@@ -376,20 +397,31 @@ footer{
         background: none;
     }
 
-        .nav a.icon {
+        .icon {
         display: none;
     }
 
     .nav a {
         display: inline-block;
     }
+
+    .header-container{
+    display: grid;
+    grid-template-columns: 1fr;
 }
+
+.logo-container{
+    margin: auto;
+    max-width: 70px;
+    padding-top: 2vw;
+}
+
 
 /* Media Q computer  */
 
 @media only screen and (min-width: 1024px) {
     body {
-        background-color: lightblue;
+        background-color: white;
     }
 
     .forside-container {
@@ -409,8 +441,8 @@ footer{
 
     .shop {
 
-        bottom: 12vw;
-        right: 37.7vw;
+        bottom: 12.5vw;
+        right: 35vw;
         padding: 1vw 3vw 1vw 3vw;
         font-size: 1.3vw;
     }
@@ -462,13 +494,6 @@ footer{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding: 0 13vw;
-    }
-
-    .nav img {
-        width: 100%;
-        max-width: 9vw;
-        margin-top: 2vw;
-        margin-bottom: 2vw;
     }
 
     .nav a {

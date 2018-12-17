@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Velkommen til Robe Copenhagen</title>
     <meta name="description" content="This is an example of a meta description. This will often show up in search results.">
+    <!-- CSS  -->
     <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- Icon  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 
 </head>
 
@@ -15,22 +19,26 @@
 
     <header>
 
-        <ul class="nav" id="topnav">
-            <li>
+        <div class="header-container">
+            <div class="logo-container">
                 <a href="forside.html">
      <img class="logo" src="logo-sort.png" alt="Robe Logo">
-     </a>
-            </li>
+     </a></div>
+     <div class="icon-container">
+    <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
+      <i class="fa fa-bars"></i></a>
+       </div>
+        </div>
+
+           <ul class="nav" id="topnav">
+
             <br>
             <li><a href="forside.html">Home</a></li>
             <li><a href="/about/">Shop</a></li>
             <li><a href="/work/">Retailers</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <a href="javascript:void(0);" class="icon" onclick="navFunktion()">
-      <i class="fa fa-bars"></i></a>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-
     </header>
 
     <main class="about-container">
@@ -123,6 +131,7 @@
             document.querySelector(".pic_11").src = about.acf.billede_11;
             document.querySelector(".pic_12").src = about.acf.billede_12;
         }
+
     </script>
 
 </body>
