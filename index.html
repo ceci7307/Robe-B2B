@@ -49,16 +49,15 @@
     <h1>Robe nyhedsbrev</h1>
 
     <label for="navn"><b>Navn</b></label>
-    <input type="text" placeholder="Dit navn..." name="name" required>
+    <input id="navn" type="text" placeholder="Dit navn..." name="name" required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Din email..." name="email" required>
+    <input id="email" type="text" placeholder="Din email..." name="email" required>
 
     <button type="submit" class="knap">Tilmeld</button>
     <button type="button" class="knap cancel" onclick="closeForm()">Luk</button>
   </form>
 </div>
-
 
     <!--INDHOLD-->
 
@@ -70,14 +69,14 @@
                 <div class="txt">
                     <h1 class="data-kollektion"></h1>
                 </div>
-                <a href="http://digcon.dk/kea/2SEM/robe-cph/shop.html"><button class="shop fade">SHOP</button></a>
+                <button class="shop fade" onclick="shopFunktion()">SHOP</button>
             </div>
             <div class="mySlides fade">
                 <img class="billeder-2" src="" alt="">
                 <div class="txt2">
                     <h1 class="data-kollektion"></h1>
                 </div>
-            <a href="http://digcon.dk/kea/2SEM/robe-cph/shop.html">    <button class="shop2 fade">SHOP</button></a>
+             <button class="shop2 fade" onclick="shopFunktion()">SHOP</button>
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -195,6 +194,10 @@ function closeForm() {
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+        }
+
+        function shopFunktion(){
+            location.href = "http://digcon.dk/kea/2SEM/robe-cph/shop.html";
         }
 
     </script>
